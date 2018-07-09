@@ -47,6 +47,13 @@ export class ProjectsComponent implements OnInit {
     "Created a REST API using Spring Boot for performing CRUD operations on MySql database.",
     "Used JPA for data persistence and MySQL connection pooling to improve the response time of system.",
     "Integration with Amazon RDS to easily set up, operate and scale MySql over the cloud."]));
+    this.projects.push(new Project("Distributed REST API using Flask",
+    "REST | MySQL | SQLAlchemy | Docker | Flask | Python | Redis",
+    ["Implemented REST API for handling get, post, put, delete requests on MySql database using Flask and SQLAlchemy",
+    "Performed round-robin load balancing using software proxy.",
+    "Performed data sharding and replication using HRW hashing on MySql database.",
+    "Ensured dynamic node deletion using circuit breaker and dynamic node addition using redis server.",
+    "Dockerized with the help of docker-compose configuring client and server communication."]));
   }
 
 }
