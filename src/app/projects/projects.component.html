@@ -13,82 +13,24 @@
 <div class="container">
 
 <ul class="timeline">
-<li>
-<div class="timeline-badge info"><i class="glyphicon glyphicon-check"></i></div>
-<div class="timeline-panel" style="background:white;">
-  <div class="timeline-heading">
-    <h4 class="timeline-title">{{projects && projects[0].title}}</h4>
-    <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> ({{projects && projects[0].skills}})</small></p>
-  </div>
-  <div class="timeline-body">
-<ul>
-<li *ngFor="let line of projects[0].description">{{ line }}</li>
-</ul>
-   </div>
-</div>
-</li>
-<li class="timeline-inverted">
-<div class="timeline-badge warning"><i class="glyphicon glyphicon-credit-card"></i></div>
-<div class="timeline-panel" style="background:white;">
-  <div class="timeline-heading">
-    <h4 class="timeline-title">{{projects && projects[1].title}}</h4>
-<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>{{projects && projects[1].skills}}</small></p>
-  </div>
-  <div class="timeline-body">
-   <ul>
-      <li *ngFor="let line of projects[1].description">{{ line }}</li>
-
-</ul>
-  </div>
-</div>
-</li>
-<li>
-<div class="timeline-badge info"><i class="glyphicon glyphicon-credit-card"></i></div>
-<div class="timeline-panel" style="background:white;">
-  <div class="timeline-heading">
-    <h4 class="timeline-title">{{projects && projects[2].title}}</h4>
-<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>{{projects && projects[2].skills}}</small></p>
-  </div>
-  <div class="timeline-body">
-<ul>
-    <li *ngFor="let line of projects[2].description">{{ line }}</li>
-
-</ul>
+  
+  <li *ngFor="let project of projects; let i=index" [class.timeline-inverted]="i%2==1">
+    <div class="timeline-badge" [class.info]="i%2==0" [class.warning]="i%2==1"><i class="glyphicon glyphicon-check"></i></div>
+    <div class="timeline-panel" style="background:white;">
+      <div class="timeline-heading">
+        <h4 class="timeline-title">{{project.title}}</h4>
+        <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> ({{project.skills}})</small></p>
+      </div>
+      <div class="timeline-body">
+    <ul>
+    <li *ngFor="let line of project.description">{{ line }}</li>
+    </ul>
+       </div>
     </div>
-</div>
-</li>
-<li class="timeline-inverted">
-<div class="timeline-badge warning"><i class="glyphicon glyphicon-credit-card"></i></div>
-
-<div class="timeline-panel" style="background:white;">
-  <div class="timeline-heading">
-    <h4 class="timeline-title">{{projects && projects[3].title}}</h4>
-<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>{{projects && projects[3].skills}}</small></p>
-  </div>
-  <div class="timeline-body">
-<ul>
-    <li *ngFor="let line of projects[3].description">{{ line }}</li>
-
-  </ul>
-    </div>
-</div>
-</li>
-<li><div class="timeline-badge info"><i class="glyphicon glyphicon-check"></i></div>
-  <div class="timeline-panel" style="background:white;">
-    <div class="timeline-heading">
-      <h4 class="timeline-title">{{projects && projects[4].title}}</h4>
-      <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> ({{projects && projects[4].skills}})</small></p>
-    </div>
-    <div class="timeline-body">
-  <ul>
-  <li *ngFor="let line of projects[0].description">{{ line }}</li>
-  </ul>
-     </div>
-  </div>
-  </li>
-<li class="timeline-inverted">
-    <div class="timeline-badge warning"><i class="glyphicon glyphicon-credit-card"></i></div>
-    
-    
     </li>
+    <li  [class.timeline-inverted]="projects.length%2==1">
+        <div class="timeline-badge warning"><i class="glyphicon glyphicon-credit-card"></i></div>
+        
+      
+        </li>
 </ul></div></section>
