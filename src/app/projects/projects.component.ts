@@ -54,6 +54,12 @@ export class ProjectsComponent implements OnInit {
     "Performed data sharding and replication using HRW hashing on MySql database.",
     "Ensured dynamic node deletion using circuit breaker and dynamic node addition using redis server.",
     "Dockerized with the help of docker-compose configuring client and server communication."]));
+    this.projects.push(new Project("Optimized Search Across Domains",
+    "Spring Boot | Hibernate | Angular | H2 | SQL | REST | Webservice",
+    ["Created an optimized search bar functionality across different domains. In my case, drugs and mechanisms",
+    "Optimized search to work across different domains by creating super class across tables belonging to different domains ",
+    "Used inheritance type as 'Table Per Class' for creating sub classes",
+    "Used an in-memory database H2 for data persistence and Angular for dynamic frontend"]));
   }
 
 }
