@@ -28,8 +28,9 @@
        </div>
     </div>
     </li>
-    <li  [class.timeline-inverted]="projects.length%2==1">
-        <div class="timeline-badge warning"><i class="glyphicon glyphicon-credit-card"></i></div>
+    <li  class="timeline-inverted">
+        <div class="timeline-badge" [class.warning]="projects.length%2==1" 
+        [class.info]="projects.length%2==0"><i class="glyphicon glyphicon-credit-card"></i></div>
         
       
         </li>
